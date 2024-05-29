@@ -1,15 +1,6 @@
 import React from 'react';
 import { PageResponse } from '@/models/response/pageResponse';
 import { ProductResponse } from '@/models/response/productResponse';
-import {
-  Button,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  Typography,
-} from '@mui/material';
-import Image from 'next/image';
 import { twclsx } from '@/utils/twclsx';
 import Grid2 from '@mui/material/Unstable_Grid2';
 import ProductCard from '@/components/ProductList/ProductCard';
