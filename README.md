@@ -12,3 +12,4 @@
 - Platzi Fake Store API
 - MongoDB
 - Vercel
+- Swiper

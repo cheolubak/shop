@@ -3,7 +3,7 @@ export const parseUrl = (
   path: string,
   params?: Record<string, any>,
 ) => {
-  const prefix = `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`;
+  const prefix = `${baseUrl}${baseUrl.endsWith('/') || path.startsWith('/') ? '' : '/'}${path}`;
   const queryString = parseParams(params);
   return `${prefix}${
     prefix.includes('?') ? '&' + queryString.slice(1) : queryString
