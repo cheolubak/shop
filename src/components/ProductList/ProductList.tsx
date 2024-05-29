@@ -1,8 +1,18 @@
 import React from 'react';
 import { PageResponse } from '@/models/response/pageResponse';
 import { ProductResponse } from '@/models/response/productResponse';
-import { Card, CardContent } from '@mui/material';
+import {
+  Button,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  Typography,
+} from '@mui/material';
 import Image from 'next/image';
+import { twclsx } from '@/utils/twclsx';
+import Grid2 from '@mui/material/Unstable_Grid2';
+import ProductCard from '@/components/ProductList/ProductCard';
 
 interface ProductListProps {
   products: PageResponse<ProductResponse>;
@@ -10,23 +20,21 @@ interface ProductListProps {
 
 function ProductList({ products }: ProductListProps) {
   return (
-    <main>
-      <ul>
+    <main className={twclsx('m-6')}>
+      <Grid2
+        container
+        spacing={{ xs: 2, md: 3, lg: 4, xl: 6 }}
+        columns={{ xs: 1, md: 2, lg: 4, xl: 5 }}
+      >
         {products.content.map((product) => (
-          <li key={product.id}>
-            <Card>
-              <CardContent>
-                <Image
-                  width={512}
-                  height={512}
-                  src={product.images[0].replace(/(\[\])/g, '')}
-                  alt={product.title}
-                />
-              </CardContent>
-            </Card>
-          </li>
+          <Grid2
+            key={product.id}
+            xs={1}
+          >
+            <ProductCard product={product} />
+          </Grid2>
         ))}
-      </ul>
+      </Grid2>
     </main>
   );
 }

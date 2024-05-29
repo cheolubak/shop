@@ -13,8 +13,6 @@ export default async function Home() {
     products = undefined;
   }
 
-  // console.log(products);
-
   if (!products) {
     return null;
   }

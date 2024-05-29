@@ -21,10 +21,7 @@ export async function GET(request: Request) {
     hasNext,
     content: res.map((x) => ({
       ...x,
-      images: x.images.map((img) => {
-        console.log(img.replaceAll(/["[\]]/g, ''));
-        return img.replaceAll(/["[\]]/g, '');
-      }),
+      images: x.images.map((img) => img.replaceAll(/["[\]]/g, '')),
     })),
     nextPage: hasNext ? page + 1 : undefined,
   };

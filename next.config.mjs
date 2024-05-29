@@ -6,6 +6,10 @@ const nextConfig = {
         hostname: 'placeimg.com',
         protocol: 'https',
       },
+      {
+        hostname: '"i.imgur.com',
+        protocol: 'https',
+      },
     ],
   },
 };
